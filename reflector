@@ -1,0 +1,21 @@
+#!/usr/bin/python
+import os
+
+from optparse import OptionParser
+
+
+parser = OptionParser()
+parser.add_option("--interface", dest="interface",
+                  help="enter interface")
+parser.add_option("--victim-ip", dest="victimip",
+                  help="enter victim-ip")
+parser.add_option("--victim-ethernet", dest="victimethernet",
+                  help="enter victim-ethernet")
+parser.add_option("--reflector-ip", dest="reflectorip",
+                  help="enter reflector-ip")
+parser.add_option("--reflector-ethernet", dest="reflectorethernet",
+                  help="enter reflector-ethernet")
+
+(options, args) = parser.parse_args()
+
+os.system("python test.py --interface "+options.interface+" --victim-ip "+options.victimip+" --victim-ethernet "+options.victimethernet +" --reflector-ip "+options.reflectorip+" --reflector-ethernet "+options.reflectorethernet)
